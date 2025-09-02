@@ -1,0 +1,174 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=BoldAccent:300,400,500,600,700&family=Elegant:300,400,500,600,700&display=swap" rel="stylesheet">
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Niyantri Cafe - Menu</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
+  <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+  <style>
+    @font-face { font-family: 'Elegant'; src: url(''); font-weight: 400; }
+    @font-face { font-family: 'BoldAccent'; src: url(''); font-weight: 700; }
+  </style>
+</head>
+<body style="font-family: 'BoldAccent', sans-serif;" class="min-h-screen bg-gradient-to-b from-yellow-50 to-amber-100 opacity-0 transition-opacity duration-700" id="page-root" style="font-family: Elegant, sans-serif;">
+  <header class="bg-white/70 backdrop-filter backdrop-blur-md border-b border-gray-200 fixed w-full z-50">
+    <nav class="max-w-7xl mx-auto px-4 py-4 flex items-center justify-between">
+      <a href="index.html" class="flex items-center gap-2 text-2xl font-bold text-amber-800" aria-label="Niyantri Cafe Home">
+        <svg width="28" height="28" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" class="inline-block align-middle"><circle cx="12" cy="12" r="9" stroke="#f59e0b" stroke-width="2" fill="none"/><path d="M8 12h8" stroke="#f59e0b" stroke-width="2" stroke-linecap="round"/><path d="M12 8v8" stroke="#f59e0b" stroke-width="2" stroke-linecap="round"/></svg>
+        Niyantri Cafe
+      </a>
+      <div class="hidden md:flex items-center space-x-6 text-gray-700">
+        <a href="index.html" class="hover:underline">Home</a>
+        <a href="menu.html" class="hover:underline">Menu</a>
+        <a href="cart.html" class="flex items-center hover:underline">Cart (<span id="cart-count">0</span>)</a>
+        <a href="about.html" class="hover:underline">About</a>
+        <a href="contact.html" class="hover:underline">Contact</a>
+      </div>
+      <button class="md:hidden p-2 rounded" id="mobile-menu-button" aria-label="Open menu">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M4 6h16M4 12h16M4 18h16" stroke="#374151" stroke-width="2" stroke-linecap="round"/></svg>
+      </button>
+    </nav>
+    <div id="mobile-menu" class="hidden bg-white/90 border-t border-gray-200">
+      <a href="index.html" class="block px-4 py-2">Home</a>
+      <a href="menu.html" class="block px-4 py-2">Menu</a>
+      <a href="cart.html" class="block px-4 py-2">Cart (<span id="mobile-cart-count">0</span>)</a>
+      <a href="about.html" class="block px-4 py-2">About</a>
+      <a href="contact.html" class="block px-4 py-2">Contact</a>
+    </div>
+  </header>
+
+  <main class="pt-28">
+    <section class="max-w-5xl mx-auto px-4 mb-12" aria-label="Menu">
+      <h1 class="text-3xl font-bold mb-6" style="font-family: BoldAccent">Our Menu</h1>
+      <p class="text-gray-700 mb-6">Explore our handcrafted coffees. Each item is prepared with care using ethically sourced beans.
+      </p>
+      <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <!-- Menu items: full static list -->
+        <div class="bg-white/90 rounded-xl shadow p-4 flex flex-col" style="min-height: 260px;">
+          <img src="https://images.unsplash.com/photo-1712637007419-3bd6977f97ec?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3ODkyNDZ8MHwxfHNlYXJjaHwyfHxhJTIwY3VwJTIwb2YlMjBlc3ByZXNzbyUyMHdpdGglMjBjcmVtYXxlbnwwfDB8fHwxNzU2ODExODMzfDA&ixlib=rb-4.1.0&q=80&w=1080" alt="Espresso" class="h-40 w-full object-cover rounded mb-3" />
+          <h3 class="font-semibold">Espresso</h3>
+          <p class="text-sm text-gray-600 mb-2 flex-1">Rich and bold, a classic shot to start your day.</p>
+          <div class="flex items-center justify-between mt-2">
+            <span class="font-semibold">$2.50</span>
+            <button onclick="addToCart('espresso','Espresso','2.50')" class="px-3 py-2 rounded bg-amber-600 text-white hover:bg-amber-700">Add to Cart</button>
+          </div>
+        </div>
+        <div class="bg-white/90 rounded-xl shadow p-4 flex flex-col" style="min-height: 260px;">
+          <img src="https://images.pexels.com/photos/207287/pexels-photo-207287.jpeg?auto=compress&cs=tinysrgb&h=650&w=940" alt="Latte" class="h-40 w-full object-cover rounded mb-3" />
+          <h3 class="font-semibold">Latte</h3>
+          <p class="text-sm text-gray-600 mb-2 flex-1">Silky milk and balanced coffee notes with artful foam.</p>
+          <div class="flex items-center justify-between mt-2">
+            <span class="font-semibold">$3.75</span>
+            <button onclick="addToCart('latte','Latte','3.75')" class="px-3 py-2 rounded bg-amber-600 text-white hover:bg-amber-700">Add to Cart</button>
+          </div>
+        </div>
+        <div class="bg-white/90 rounded-xl shadow p-4 flex flex-col" style="min-height: 260px;">
+          <img src="https://images.pexels.com/photos/1036444/pexels-photo-1036444.jpeg?auto=compress&cs=tinysrgb&h=650&w=940" alt="Cappuccino" class="h-40 w-full object-cover rounded mb-3" />
+          <h3 class="font-semibold">Cappuccino</h3>
+          <p class="text-sm text-gray-600 mb-2 flex-1">Espresso with velvety milk foam for a comforting kick.</p>
+          <div class="flex items-center justify-between mt-2">
+            <span class="font-semibold">$4.25</span>
+            <button onclick="addToCart('cappuccino','Cappuccino','4.25')" class="px-3 py-2 rounded bg-amber-600 text-white hover:bg-amber-700">Add to Cart</button>
+          </div>
+        </div>
+        <div class="bg-white/90 rounded-xl shadow p-4 flex flex-col" style="min-height: 260px;">
+          <img src="https://pixabay.com/get/gc6dcf155df3ee3b317e619ee0adf0446c97d013367f2287f48b3b82a952dce068925ab58479c4da3f21e281828dac406a61d4b86bc70b0a340ef20e5353108d5_640.jpg" alt="Mocha" class="h-40 w-full object-cover rounded mb-3" />
+          <h3 class="font-semibold">Mocha</h3>
+          <p class="text-sm text-gray-600 mb-2 flex-1">Chocolaty espresso for a dessert-like coffee moment.</p>
+          <div class="flex items-center justify-between mt-2">
+            <span class="font-semibold">$4.75</span>
+            <button onclick="addToCart('mocha','Mocha','4.75')" class="px-3 py-2 rounded bg-amber-600 text-white hover:bg-amber-700">Add to Cart</button>
+          </div>
+        </div>
+        <div class="bg-white/90 rounded-xl shadow p-4 flex flex-col" style="min-height: 260px;">
+          <img src="https://images.unsplash.com/photo-1676999279690-f1ebac70e6a8?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3ODkyNDZ8MHwxfHNlYXJjaHw3fHxhJTIwY29sZCUyMGJyZXclMjBnbGFzcyUyMHdpdGglMjBpY2V8ZW58MHwwfHx8MTc1NjgxMTg0MHww&ixlib=rb-4.1.0&q=80&w=1080" alt="Cold Brew" class="h-40 w-full object-cover rounded mb-3" />
+          <h3 class="font-semibold">Cold Brew</h3>
+          <p class="text-sm text-gray-600 mb-2 flex-1">Smooth, bold, and refreshing—perfect for Hyderabad heat.</p>
+          <div class="flex items-center justify-between mt-2">
+            <span class="font-semibold">$4.00</span>
+            <button onclick="addToCart('coldbrew','Cold Brew','4.00')" class="px-3 py-2 rounded bg-amber-600 text-white hover:bg-amber-700">Add to Cart</button>
+          </div>
+        </div>
+        <div class="bg-white/90 rounded-xl shadow p-4 flex flex-col" style="min-height: 260px;">
+          <img src="https://pixabay.com/get/g98a760fac9b7d3bf9a35f7b6a784733886cad6839f8111a3f6031aea630577fab735dfc33e2808ca41c6970ff0b72c30ce33678325a9a34bc5c7a52496998deb_640.jpg" alt="Caramel Macchiato" class="h-40 w-full object-cover rounded mb-3" />
+          <h3 class="font-semibold">Caramel Macchiato</h3>
+          <p class="text-sm text-gray-600 mb-2 flex-1">Vanilla, caramel, and espresso layered to perfection.</p>
+          <div class="flex items-center justify-between mt-2">
+            <span class="font-semibold">$5.25</span>
+            <button onclick="addToCart('caramel_macchiato','Caramel Macchiato','5.25')" class="px-3 py-2 rounded bg-amber-600 text-white hover:bg-amber-700">Add to Cart</button>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="bg-gray-900 text-gray-100 mt-12">
+    <div class="max-w-7xl mx-auto px-4 py-6 flex justify-between items-center">
+      <span>&copy; 2025 Niyantri Cafe</span>
+      <span class="text-sm">Hyderabad, India</span>
+    </div>
+  </footer>
+
+  <div id="toast" class="hidden fixed bottom-4 right-4 bg-gray-800 text-white px-4 py-2 rounded"></div>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      updateCartCount();
+      if (document.getElementById('cart-items-container')) { renderCartPage(); }
+      const btn = document.getElementById('mobile-menu-button'); const menu = document.getElementById('mobile-menu'); if (btn && menu) btn.addEventListener('click', () => menu.classList.toggle('hidden'));
+      document.body.classList.remove('opacity-0');
+    });
+
+    function getCart() { return JSON.parse(localStorage.getItem('shoppingCart')) || []; }
+    function saveCart(cart) { localStorage.setItem('shoppingCart', JSON.stringify(cart)); updateCartCount(); }
+
+    function addToCart(itemId, itemName, itemPrice) { const cart = getCart(); const existing = cart.find(i => i.id === itemId); if (existing) existing.quantity++; else cart.push({ id: itemId, name: itemName, price: itemPrice, quantity: 1 }); saveCart(cart); showToast(itemName + ' added to cart.'); }
+    function removeFromCart(itemId) { let cart = getCart(); cart = cart.filter(i => i.id !== itemId); saveCart(cart); }
+    function updateCartCount() { const cart = getCart(); const totalItems = cart.reduce((s, i) => s + i.quantity, 0); const el = document.getElementById('cart-count'); const me = document.getElementById('mobile-cart-count'); if (el) el.textContent = totalItems; if (me) me.textContent = totalItems; }
+    function renderCartPage() {
+      const cart = getCart(); const container = document.getElementById('cart-items-container'); const totalEl = document.getElementById('cart-total'); if (!container || !totalEl) return; container.innerHTML = ''; if (cart.length === 0) { container.innerHTML = '<p class="text-center text-gray-600 py-4">Your cart is empty.</p>'; totalEl.textContent = '0.00'; return; } let total = 0; cart.forEach(item => {
+        const row = document.createElement('div'); row.className = 'flex items-center justify-between border-b py-2'; row.innerHTML = `
+          <div class="flex items-center gap-3">
+            <span class="font-semibold">${item.name}</span>
+            <span class="text-sm text-gray-500">x${item.quantity}</span>
+          </div>
+          <div class="flex items-center gap-4">
+            <span class="font-semibold">$${(item.price * item.quantity).toFixed(2)}</span>
+            <button onclick="removeFromCart('${item.id}')" class="px-2 py-1 rounded bg-red-500 text-white hover:bg-red-600">Remove</button>
+          </div>
+        `; container.appendChild(row); total += item.price * item.quantity; }); totalEl.textContent = total.toFixed(2);
+      }
+    function proceedToCheckout() {
+      const cart = getCart(); if (cart.length > 0) {
+        const modal = document.getElementById('paypal-modal'); if (modal) modal.style.display = 'block'; else {
+          const m = document.createElement('div'); m.id='paypal-modal'; m.className='fixed inset-0 bg-black/50 flex items-center justify-center'; m.innerHTML = `
+            <div class="bg-white rounded-lg shadow-xl p-6 w-11/12 md:w-1/2 text-left">
+              <h3 class="text-xl font-semibold mb-2">PayPal Checkout (Mock)</h3>
+              <p class="mb-4 text-sm text-gray-700">This is a simulated PayPal flow for demonstration purposes.</p>
+              <div class="mb-4"><input id="pp-email" class="w-full border rounded px-3 py-2" placeholder="Email you use with PayPal" /></div>
+              <div class="flex justify-end space-x-3">
+                <button class="px-4 py-2 rounded bg-gray-200" onclick="closePaypalModal()">Cancel</button>
+                <button class="px-4 py-2 rounded bg-blue-600 text-white" onclick="mockPayPalProcess()">Pay Now</button>
+              </div>
+            </div>
+          `; document.body.appendChild(m);
+        }
+      } else { alert('Your cart is empty.'); }
+    }
+    function closePaypalModal() { const modal = document.getElementById('paypal-modal'); if (modal) modal.style.display = 'none'; }
+    function mockPayPalProcess() {
+      const email = (document.getElementById('pp-email')?.value) || 'guest@example.com'; const modal = document.getElementById('paypal-modal'); if (modal) modal.innerHTML = `<div class="bg-white rounded-lg shadow-xl p-6 w-11/12 md:w-1/2 text-left"><p class="mb-4">Processing payment with PayPal for ${email}...</p><p class="text-sm text-gray-600">Please wait</p></div>`; setTimeout(() => {
+        if (modal) modal.innerHTML = `<div class="bg-white rounded-lg shadow-xl p-6 w-11/12 md:w-1/2 text-left"><h4 class="text-lg font-semibold mb-2">Payment Successful</h4><p class="mb-4">Thank you! Your order at Niyantri Cafe is confirmed. A receipt has been sent to ${email}.</p><button class="px-4 py-2 rounded bg-green-600 text-white" onclick="closePaypalModalAndClearCart()">Close</button></div>`; localStorage.removeItem('shoppingCart'); updateCartCount(); } , 1500);
+    }
+    function closePaypalModalAndClearCart() { closePaypalModal(); window.location.href = 'index.html'; }
+    function showToast(message) {
+      const t = document.getElementById('toast'); if (!t) { const el = document.createElement('div'); el.id='toast'; el.className='fixed bottom-4 right-4 bg-gray-800 text-white px-4 py-2 rounded'; el.style.zIndex=1000; el.textContent=message; document.body.appendChild(el); setTimeout(() => el.remove(), 2000); } else { t.textContent = message; }
+    }
+  </script>
+</body>
+</html>
