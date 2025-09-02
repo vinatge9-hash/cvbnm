@@ -1,0 +1,294 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=BoldAccent:300,400,500,600,700&family=Elegant:300,400,500,600,700&display=swap" rel="stylesheet">
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Niyantri Cafe - Home</title>
+  <!-- Tailwind CSS (CDN) -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <!-- Swiper (for image carousel) -->
+  <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
+  <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+  <!-- Placeholder Fonts (advanced font usage with placeholders) -->
+  <style>
+    @font-face {
+      font-family: 'Elegant';
+      src: url('');
+      font-weight: 400;
+    }
+    @font-face {
+      font-family: 'BoldAccent';
+      src: url('');
+      font-weight: 700;
+    }
+  </style>
+</head>
+<body style="font-family: 'BoldAccent', sans-serif;" class="min-h-screen bg-gradient-to-b from-yellow-50 to-amber-100 opacity-0 transition-opacity duration-700" id="page-root" style="font-family: Elegant, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;">
+  <!-- Header / Nav (identical across pages) -->
+  <header class="bg-white/70 backdrop-filter backdrop-blur-md border-b border-gray-200 fixed w-full z-50">
+    <nav class="max-w-7xl mx-auto px-4 py-4 flex items-center justify-between">
+      <a href="index.html" class="flex items-center gap-2 text-2xl font-bold text-amber-800" aria-label="Niyantri Cafe Home">
+        <!-- Simple inline SVG logo -->
+        <svg width="28" height="28" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" class="inline-block align-middle">
+          <defs>
+            <linearGradient id="g" x1="0" x2="1" y1="0" y2="1">
+              <stop stop-color="#f59e0b" />
+              <stop stop-color="#f472b6" />
+            </linearGradient>
+          </defs>
+          <circle cx="12" cy="12" r="9" stroke="url(#g)" stroke-width="2" fill="none" />
+          <path d="M8 12h8" stroke="url(#g)" stroke-width="2" stroke-linecap="round"/>
+          <path d="M12 8v8" stroke="url(#g)" stroke-width="2" stroke-linecap="round"/>
+        </svg>
+        Niyantri Cafe
+      </a>
+      <div class="hidden md:flex items-center space-x-6 text-gray-700">
+        <a href="index.html" class="hover:underline">Home</a>
+        <a href="menu.html" class="hover:underline">Menu</a>
+        <a href="cart.html" class="flex items-center hover:underline">Cart (<span id="cart-count">0</span>)</a>
+        <a href="about.html" class="hover:underline">About</a>
+        <a href="contact.html" class="hover:underline">Contact</a>
+      </div>
+      <button class="md:hidden p-2 rounded" id="mobile-menu-button" aria-label="Open menu">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M4 6h16M4 12h16M4 18h16" stroke="#374151" stroke-width="2" stroke-linecap="round"/></svg>
+      </button>
+    </nav>
+    <div id="mobile-menu" class="hidden bg-white/90 border-t border-gray-200">
+      <a href="index.html" class="block px-4 py-2">Home</a>
+      <a href="menu.html" class="block px-4 py-2">Menu</a>
+      <a href="cart.html" class="block px-4 py-2">Cart (<span id="mobile-cart-count">0</span>)</a>
+      <a href="about.html" class="block px-4 py-2">About</a>
+      <a href="contact.html" class="block px-4 py-2">Contact</a>
+    </div>
+  </header>
+
+  <main class="pt-28">
+    <!-- Hero with Swiper carousel -->
+    <section class="max-w-5xl mx-auto px-4 mb-12" aria-label="Hero">
+      <div class="swiper my-8 rounded-xl overflow-hidden shadow-xl">
+        <div class="swiper-wrapper">
+          <div class="swiper-slide h-80 relative">
+            <img src="https://pixabay.com/get/gadc46c7b5735b255ba0c4a2356ddaf27c68f05559cce5f0933a0fabddab516d5228578fe841cbe8ffa2b6824edf68e0b51b04d24fd3bbc55f03773bec814c041_640.jpg" alt="Fresh brewed coffee" class="w-full h-full object-cover" />
+            <div class="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/60 to-transparent text-white p-4">
+              <h2 class="text-2xl font-bold" style="font-family: BoldAccent">Brewed to Perfection</h2>
+              <p class="mt-1">Experience the warmth of Hyderabad in a cup.</p>
+            </div>
+          </div>
+          <div class="swiper-slide h-80 relative">
+            <img src="https://pixabay.com/get/g830b57d53600a6648e21e573b26d7cb3ba5d5b6a2af47057006936e88d5a9ff0de5fe0cd0c366e88b5f0b3d5c06453fd89d821cfba7778d402d9a010ccd5913c_640.jpg" alt="Latte art" class="w-full h-full object-cover" />
+            <div class="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/60 to-transparent text-white p-4">
+              <h3 class="text-xl" style="font-family: Elegant">Taste the craft</h3>
+              <p class="mt-1">Sourced beans, roasted to bring out notes of caramel and chocolate.</p>
+            </div>
+          </div>
+          <div class="swiper-slide h-80 relative">
+            <img src="https://images.unsplash.com/photo-1692073614869-c9f9dda1c40b?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3ODkyNDZ8MHwxfHNlYXJjaHw5fHxhJTIwc2NlbmljJTIwY2FmZSUyMGludGVyaW9yJTIwd2l0aCUyMHdhcm0lMjBsaWdodGluZ3xlbnwwfDB8fHwxNzU2ODExODMzfDA&ixlib=rb-4.1.0&q=80&w=1080" alt="Cozy cafe interior" class="w-full h-full object-cover" />
+            <div class="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/60 to-transparent text-white p-4">
+              <h3 class="text-xl">Cozy & Welcoming</h3>
+              <p class="mt-1">A perfect place for conversations, study, or a quick pick-me-up.</p>
+            </div>
+          </div>
+        </div>
+        <div class="swiper-pagination"></div>
+        <div class="swiper-button-prev"></div>
+        <div class="swiper-button-next"></div>
+      </div>
+      <div class="flex items-center justify-center mt-6">
+        <a href="menu.html" class="px-6 py-3 rounded-lg bg-amber-600 text-white hover:bg-amber-700 shadow transition">Explore Menu</a>
+      </div>
+    </section>
+
+    <!-- Testimonials -->
+    <section class="bg-white/70 backdrop-filter backdrop-blur rounded-xl mx-auto max-w-5xl px-6 py-8 mb-12 shadow-md" aria-label="Testimonials">
+      <h2 class="text-2xl font-bold mb-4" style="font-family: BoldAccent">What our guests say</h2>
+      <div class="grid md:grid-cols-3 gap-6">
+        <blockquote class="p-4 rounded-lg border border-gray-200 bg-white/90">“Niyantri Cafe feels like a warm hug in a cup. The espresso is superb and the ambience is perfect for a Hyderabad morning.”</blockquote>
+        <blockquote class="p-4 rounded-lg border border-gray-200 bg-white/90">“Their latte art is gorgeous and the beans are rich with nuanced notes. A must-visit if you love good coffee.”</blockquote>
+        <blockquote class="p-4 rounded-lg border border-gray-200 bg-white/90">“Efficient service, friendly staff, and a cozy space that’s perfect for meetings or quiet reading.”</blockquote>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer (identical across pages) -->
+  <footer class="bg-gray-900 text-gray-100 mt-12">
+    <div class="max-w-7xl mx-auto px-4 py-8 grid md:grid-cols-3 gap-8">
+      <div>
+        <h4 class="font-semibold mb-2">Niyantri Cafe</h4>
+        <p class="text-sm text-gray-300">A cozy Hyderabad cafe serving crafted coffee and gentle moments.</p>
+      </div>
+      <div>
+        <h4 class="font-semibold mb-2">Locations</h4>
+        <p class="text-sm text-gray-300">Hyderabad, India</p>
+      </div>
+      <div>
+        <h4 class="font-semibold mb-2">Contact</h4>
+        <p class="text-sm text-gray-300">Email: hello@niyantr cafe.local</p>
+      </div>
+    </div>
+    <div class="border-t border-gray-700 py-4 text-center text-sm text-gray-400">&copy; 2025 Niyantri Cafe. All rights reserved.</div>
+  </footer>
+
+  <!-- Toast (optional) -->
+  <div id="toast" class="hidden fixed bottom-4 right-4 bg-gray-800 text-white px-4 py-2 rounded"></div>
+
+  <!-- Inline script: Shopping cart logic + mock PayPal flow (shared across pages) -->
+  <script>
+    // Page load fade-in
+    document.addEventListener('DOMContentLoaded', () => {
+      // update cart count on all pages
+      updateCartCount();
+      // If on cart page, render cart contents
+      if (document.getElementById('cart-items-container')) {
+        renderCartPage();
+      }
+      // initialize mobile menu toggle
+      const btn = document.getElementById('mobile-menu-button');
+      const menu = document.getElementById('mobile-menu');
+      if (btn && menu) {
+        btn.addEventListener('click', () => menu.classList.toggle('hidden'));
+      }
+      // Initialize Swiper on home if present
+      const swiperEl = document.querySelector('.swiper');
+      if (swiperEl) {
+        new Swiper('.swiper', { loop: true, autoplay: { delay: 3000 }, pagination: { el: '.swiper-pagination', clickable: true }, navigation: { nextEl: '.swiper-button-next', prevEl: '.swiper-button-prev' } });
+      }
+      // fade-in effect for the whole page
+      document.body.classList.remove('opacity-0');
+      // refresh mobile cart count in modal header (if any)
+      const mc = document.getElementById('mobile-cart-count'); if (mc) mc.textContent = getCart().reduce((s,i)=>s+i.quantity,0);
+    });
+
+    function getCart() { return JSON.parse(localStorage.getItem('shoppingCart')) || []; }
+    function saveCart(cart) { localStorage.setItem('shoppingCart', JSON.stringify(cart)); updateCartCount(); }
+
+    function addToCart(itemId, itemName, itemPrice) {
+      const cart = getCart();
+      const existing = cart.find(i => i.id === itemId);
+      if (existing) existing.quantity++; else cart.push({ id: itemId, name: itemName, price: itemPrice, quantity: 1 });
+      saveCart(cart);
+      showToast(itemName + ' added to cart.');
+    }
+
+    function removeFromCart(itemId) {
+      let cart = getCart();
+      cart = cart.filter(i => i.id !== itemId);
+      saveCart(cart);
+      renderCartPage();
+    }
+
+    function updateCartCount() {
+      const cart = getCart();
+      const totalItems = cart.reduce((sum, item) => sum + item.quantity, 0);
+      const cartCountElement = document.getElementById('cart-count');
+      const mobileCartCountElement = document.getElementById('mobile-cart-count');
+      if (cartCountElement) cartCountElement.textContent = totalItems;
+      if (mobileCartCountElement) mobileCartCountElement.textContent = totalItems;
+    }
+
+    function renderCartPage() {
+      const cart = getCart();
+      const container = document.getElementById('cart-items-container');
+      const totalElement = document.getElementById('cart-total');
+      if (!container || !totalElement) return;
+      container.innerHTML = '';
+      if (cart.length === 0) {
+        container.innerHTML = '<p class="text-center text-gray-600 py-4">Your cart is empty.</p>';
+        totalElement.textContent = '0.00';
+        return;
+      }
+      let total = 0;
+      cart.forEach(item => {
+        const row = document.createElement('div');
+        row.className = 'flex items-center justify-between border-b py-2';
+        row.innerHTML = `
+          <div class="flex items-center gap-3">
+            <span class="font-semibold">${item.name}</span>
+            <span class="text-sm text-gray-500">x${item.quantity}</span>
+          </div>
+          <div class="flex items-center gap-4">
+            <span class="font-semibold">$${(item.price * item.quantity).toFixed(2)}</span>
+            <button onclick="removeFromCart('${item.id}')" class="px-2 py-1 rounded bg-red-500 text-white hover:bg-red-600">Remove</button>
+          </div>
+        `;
+        container.appendChild(row);
+        total += item.price * item.quantity;
+      });
+      totalElement.textContent = total.toFixed(2);
+    }
+
+    function proceedToCheckout() {
+      const cart = getCart();
+      if (cart.length > 0) {
+        // Mock PayPal modal
+        const existing = document.getElementById('paypal-modal');
+        if (existing) existing.style.display = 'block';
+        else {
+          const mod = document.createElement('div');
+          mod.id = 'paypal-modal';
+          mod.className = 'fixed inset-0 bg-black/50 flex items-center justify-center';
+          mod.innerHTML = `
+            <div class="bg-white rounded-lg shadow-xl p-6 w-11/12 md:w-1/2 text-left">
+              <h3 class="text-xl font-semibold mb-2">PayPal Checkout (Mock)</h3>
+              <p class="mb-4 text-sm text-gray-700">This is a simulated PayPal flow for demonstration purposes.</p>
+              <div class="mb-4">
+                <input id="pp-email" class="w-full border rounded px-3 py-2" placeholder="Email you use with PayPal" />
+              </div>
+              <div class="flex justify-end space-x-3">
+                <button class="px-4 py-2 rounded bg-gray-200" onclick="closePaypalModal()">Cancel</button>
+                <button class="px-4 py-2 rounded bg-blue-600 text-white" onclick="mockPayPalProcess()">Pay Now</button>
+              </div>
+            </div>
+          `;
+          document.body.appendChild(mod);
+        }
+      } else {
+        alert('Your cart is empty.');
+      }
+    }
+
+    function closePaypalModal() {
+      const modal = document.getElementById('paypal-modal');
+      if (modal) modal.style.display = 'none';
+    }
+
+    function mockPayPalProcess() {
+      const email = (document.getElementById('pp-email')?.value) || 'guest@example.com';
+      const modal = document.getElementById('paypal-modal');
+      if (modal) modal.innerHTML = `<div class="bg-white rounded-lg shadow-xl p-6 w-11/12 md:w-1/2 text-left"><p class="mb-4">Processing payment with PayPal for ${email}...</p><p class="text-sm text-gray-600">Please wait...</p></div>`;
+      // simulate network delay
+      setTimeout(() => {
+        if (modal) modal.innerHTML = `<div class="bg-white rounded-lg shadow-xl p-6 w-11/12 md:w-1/2 text-left"><h4 class="text-lg font-semibold mb-2">Payment Successful</h4><p class="mb-4">Thank you! Your order at Niyantri Cafe is confirmed. A receipt has been sent to ${email}.</p><button class="px-4 py-2 rounded bg-green-600 text-white" onclick="closePaypalModalAndClearCart()">Close</button></div>`;
+        // clear cart
+        localStorage.removeItem('shoppingCart');
+        updateCartCount();
+        renderCartPage();
+      }, 1500);
+    }
+
+    function closePaypalModalAndClearCart() {
+      closePaypalModal();
+      // redirect to home for a fresh start
+      window.location.href = 'index.html';
+    }
+
+    function showToast(message) {
+      const t = document.getElementById('toast');
+      if (!t) {
+        const el = document.createElement('div');
+        el.id = 'toast';
+        el.className = 'fixed bottom-4 right-4 bg-gray-800 text-white px-4 py-2 rounded shadow';
+        el.style.zIndex = 1000;
+        el.textContent = message;
+        document.body.appendChild(el);
+        setTimeout(() => el.remove(), 2000);
+      } else {
+        t.textContent = message;
+      }
+    }
+  </script>
+  <!-- End of shared script -->
+</body>
+</html>
